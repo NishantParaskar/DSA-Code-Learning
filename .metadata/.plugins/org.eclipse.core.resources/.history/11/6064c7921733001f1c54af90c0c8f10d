@@ -1,0 +1,12 @@
+
+public class FindSqureRoot {
+	
+	
+	public static void main(String[] args) {
+		int num = 18;
+		int ans = FindSqureRoot(n);
+		System.out.println("Square root of $num: " +ans );
+		
+	}
+
+}

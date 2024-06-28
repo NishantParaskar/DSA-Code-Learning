@@ -1,0 +1,24 @@
+
+public class BinarySearchLowerBound {
+	
+
+	public static void main(String[] args)
+	{
+		// Lower Bound Condition  : arr[index] >= X 
+		
+		int arr[] = {1,2,3,3,5,8,8,10,10,11}  ;
+		int X  =  9 ; 
+		int index = BinarySearchLowerBound(arr ,  9) ;
+		System.out.println("Lower Bound of "+ X + " is  : "+ index);
+		
+		
+	}
+
+
+
+
+ static int BinarySearchLowerBound(int[] arr, int i) {
+	
+	}
+
+}

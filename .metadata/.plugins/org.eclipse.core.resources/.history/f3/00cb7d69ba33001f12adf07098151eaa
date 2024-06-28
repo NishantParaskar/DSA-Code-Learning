@@ -1,0 +1,39 @@
+import java.util.Arrays;
+
+public class KokoBananaProblem {
+
+	public static void main(String[] args) {
+		int nums[] = { 3, 6, 7, 11 };
+		int h = 8;
+
+		int minHour = KokoBananaProblem(nums, h);
+		System.out.println("The Minimum hour required to finish the banana is :" + minHour);
+	}
+
+	private static int KokoBananaProblem(int[] nums, int h) {
+
+		int max = Arrays.stream(nums).max().getAsInt();
+
+		int low = 0;
+		int high = max;
+
+		while (low <= high) 
+		{
+			int mid = (low + high )/2 ;
+            int completedInHour =  EatingInhour(nums , mid );
+			
+		}
+
+		return 0;
+	}
+	
+	
+	static int EatingInhour(int  nums[] , int mid)
+	{
+		
+		int ans = 0 ;
+		
+		
+	}
+
+}

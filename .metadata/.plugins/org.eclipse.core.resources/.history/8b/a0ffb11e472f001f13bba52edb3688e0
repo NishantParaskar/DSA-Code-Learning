@@ -1,0 +1,51 @@
+
+public class SearchInRotatedSortedArray {
+	//using iteration
+    public int search1(int[] arr, int target) 
+    {
+        int low = 0;
+        int high = arr.length-1;
+        
+        while(low <= high) 
+        {
+            int mid = (low + high )/2;
+            if(arr[mid] == target) 
+            {
+                return mid;
+            }
+            //Part 1:Array is  Sorted  from low to mid Sorted
+            if(arr[si] <= arr[mid]) 
+            {
+                if(arr[si] <= target && target <= arr[mid])
+                {
+                    //go left
+                    ei = mid-1;
+                } else 
+                {
+                    //go right
+                    si = mid+1;
+                }
+            }
+            
+             //Part 2 :Array is  Sorted  from mid to High Sorted
+            else 
+            {
+                if(arr[mid] <= target && target <= arr[ei]) 
+                {
+                    //go right
+                    si = mid+1;
+                } else 
+                {
+                    //go left
+                    ei = mid-1;
+                }
+            }
+        }
+return -1 ;
+    }
+	
+	
+	public static void main(String[] args) {
+		
+	}
+}

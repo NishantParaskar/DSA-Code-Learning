@@ -1,0 +1,7 @@
+INDEX VERSION 1.130+C:\Workspace Get SDE READY CLASS\.metadata\.plugins\org.eclipse.jdt.core
+2876304732.index
+3086198347.index
+1657330681.index
+2396243097.index
+1330813233.index
+504712823.index

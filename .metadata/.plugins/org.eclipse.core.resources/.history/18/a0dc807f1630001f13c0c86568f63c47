@@ -1,0 +1,49 @@
+
+public class Sqrt {
+
+	static int mySqrt(int x) {
+
+	     int left = 0 ;
+	     int right = x;
+	     int mid = 0 ;
+	     int ans =0 ;
+	     while(left <= right)
+	     {
+	        mid = left + (right - left) /2 ;
+	        if((long)  mid * mid <= x   &&  (long)( mid + 1) * ( mid+1 ) > x)
+	        {
+	             return mid ;
+	        }
+
+	         if((long) mid * mid >  x    )
+	        {   
+	             right  = mid - 1 ;  // here can never be answer
+	        }
+	        else
+	        {  
+	            ans = mid ; // lower could be the answer  so store it
+	            left =  mid + 1 ;
+	        }
+
+	     }
+	return ans ;   
+
+	    }
+	
+	public static void main(String[] args) {
+		
+		System.err.println("Square root of :28 is "+ mySqrt(28));
+		System.err.println("Square root of :25 is "+ mySqrt(25));
+		System.err.println("Square root of :16 is "+ mySqrt(16));
+		System.err.println("Square root of :18 is "+ mySqrt(18));
+		System.err.println("Square root of :25 is "+ mySqrt(25));
+		System.err.println("Square root of :42 is "+ mySqrt(42));
+		System.err.println("Square root of :36 is "+ mySqrt(36));
+		
+	}
+}
+
+
+
+
+//refernce : https://www.youtube.com/watch?v=Bsv3FPUX_BA&list=PLgUwDviBIf0pMFMWuuvDNMAkoQFi-h0ZF&index=11

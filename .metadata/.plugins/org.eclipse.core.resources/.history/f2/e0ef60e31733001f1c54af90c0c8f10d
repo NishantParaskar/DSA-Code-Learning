@@ -1,0 +1,33 @@
+
+public class FindSqureRoot {
+	
+	
+	public static void main(String[] args) {
+		int num = 18;
+		int ans = FindSqureRoot(num);
+		System.out.println("Square root of $num: " +ans );
+		
+	}
+
+	private static int FindSqureRoot(int num) {
+
+		
+		// edge case 
+		if(num == 1){  return 1 ;}
+		
+		int low  = 1 ;
+		int high =  num ;
+		
+		
+		while(low <= high)
+		{
+			
+			
+		}
+		
+		
+		
+		return 0;
+	}
+
+}
