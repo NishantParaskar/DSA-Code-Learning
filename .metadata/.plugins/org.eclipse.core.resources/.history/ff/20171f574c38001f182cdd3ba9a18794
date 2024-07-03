@@ -1,0 +1,27 @@
+import java.util.Comparator;
+
+public class KClosestPointstoOriginProblem {
+	
+	public class point  implements Comparable
+	{
+		int x ; 
+		int y;
+		int distFromCenter;
+		int index;
+		public point(int x, int y, int distFromCenter, int index) {
+			super();
+			this.x = x;
+			this.y = y;
+			this.distFromCenter = distFromCenter;
+			this.index = index;
+		}
+		
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

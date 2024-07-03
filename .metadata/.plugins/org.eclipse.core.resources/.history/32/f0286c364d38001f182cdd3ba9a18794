@@ -1,0 +1,60 @@
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
+public class KClosestPointstoOriginProblem {
+	
+	public class point  implements Comparable
+	{
+		int x ; 
+		int y;
+		int distFromCenter;
+		int index;
+		public point(int x, int y, int distFromCenter, int index) {
+			super();
+			this.x = x;
+			this.y = y;
+			this.distFromCenter = distFromCenter;
+			this.index = index;
+		}
+	
+		public int compareTo(point distFromCenter2) {
+			
+			return this.distFromCenter - distFromCenter2.distFromCenter; // Ascending order sorting based on distance
+		}
+		
+		
+	}
+	
+	
+	
+	
+	public static int[][] kClosest(int[][] points, int k)
+	{
+		//step 1 :Create priority queue
+		PriorityQueue<point> pq = new PriorityQueue<>() ;
+		
+		for (int i = 0; i < points.length; i++) 
+		{
+			int x = points[i][0] ; 
+			int y = points[i][1]  ;
+
+					
+			int dist = (x* x) + (y* y) ;
+		     // Add the point to the priority queue
+			point p = new point(x, y, dist , i) ;
+			pq.add(p ) ;
+		}
+		
+		
+		
+		
+		
+		return points;
+		
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

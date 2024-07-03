@@ -1,0 +1,52 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+public class smallerNumbersThanCurrent {
+	
+	 public static int[] smallerNumbersThanCurrent(int[] nums) {
+	        int[] count = new int[101];
+	        System.out.println();
+	        System.out.println("initialize");
+	        System.out.println(Arrays.toString(count));
+	        int n = nums.length;
+	        
+	        for (int i = 0; i < n; i++) {
+	            count[nums[i]]++;
+	        }
+	        System.out.println();
+	        System.out.println("Assigne value per frequency");
+	        System.out.println(Arrays.toString(count));
+	        
+	        for (int i = 1; i <= 100; i++) {
+	            count[i] = count[i] + count[i - 1];
+	        }
+	        
+	        System.out.println();
+	        System.out.println("initialize");
+	        System.out.println(Arrays.toString(count));
+	        
+	        int[] result = new int[n];
+	        
+	        for (int i = 0; i < n; i++) {
+	            if (nums[i] == 0) {
+	                result[i] = 0;
+	            } else {
+	                result[i] = count[nums[i] - 1];
+	            }
+	        }
+	        
+	        return result;
+	    }
+	 
+	 public static void main(String[] args) {
+		
+		 int[] nums =  {8,1,2,2,3} ;
+		 
+		 int result[]  = nums.clone() ;
+		 System.out.println(Arrays.toString(result));
+
+		 System.out.println(Arrays.toString(smallerNumbersThanCurrent(nums)));
+		
+	}
+
+}
