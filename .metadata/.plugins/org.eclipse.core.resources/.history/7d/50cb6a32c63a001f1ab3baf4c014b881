@@ -1,0 +1,31 @@
+import java.util.TreeMap;
+import java.util.Arrays;
+
+//https://leetcode.com/problems/find-right-interval/description/
+
+public class FindRightInterval {
+	public static void main(String[] args) {
+		int[][] intervals = { {3,4},{2,3}],{1,2} };
+		
+		   // Number of rows
+        int numberOfRows = intervals.length;
+        
+		// Creating a TreeMap
+        TreeMap<Integer, Integer> startMap = new TreeMap<>();
+        
+        // Adding start points of intervals
+       
+        for (int index = 0 ; index <numberOfRows ; index++) 
+        {
+            startMap.put(intervals[index][0], index);  // adding 1st value from array as key and 2nd as index
+        }
+        
+        System.out.println(Arrays.toString(intervals[0]));
+        System.out.println(Arrays.toString(intervals[1]));
+        System.out.println(Arrays.toString(intervals[2]));
+        System.out.println(Arrays.toString(intervals[3]));
+        System.out.println(Arrays.toString(intervals[4]));
+
+	}
+
+}

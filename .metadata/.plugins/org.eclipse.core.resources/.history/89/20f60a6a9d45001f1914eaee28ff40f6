@@ -1,0 +1,30 @@
+
+public class LuckyNumbers {
+    public List<Integer> luckyNumbers(int[][] matrix) {
+        List<Integer> luckyNumbers = new ArrayList<>();
+        Set<Integer> minRowValues = new HashSet<>();
+
+        // get minimum values from each row
+        for (int[] row : matrix) {
+            minRowValues.add(Arrays.stream(row).min().getAsInt());
+        }
+
+        // Check if the maximum values in each column are
+        // in the set of minimum row values
+        for (int c = 0; c < matrix[0].length; c++) {
+            int max = Integer.MIN_VALUE;
+            for (int[] row : matrix) {
+                max = Math.max(max, row[c]);
+            }
+            if (minRowValues.contains(max)) {
+                luckyNumbers.add(max);
+            }
+        }
+
+        return luckyNumbers;
+    }
+    
+    
+    
+
+}

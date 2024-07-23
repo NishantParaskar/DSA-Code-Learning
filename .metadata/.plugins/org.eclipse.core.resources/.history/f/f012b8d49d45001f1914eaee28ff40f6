@@ -1,0 +1,78 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class LuckyNumbers {
+    public List<Integer> luckyNumbers(int[][] matrix) {
+        List<Integer> luckyNumbers = new ArrayList<>();
+        Set<Integer> minRowValues = new HashSet<>();
+
+        // get minimum values from each row
+        for (int[] row : matrix) {
+            minRowValues.add(Arrays.stream(row).min().getAsInt());
+            //System.out.println(minRowValues);
+        }
+
+        // Check if the maximum values in each column are
+        // in the set of minimum row values
+        for (int c = 0; c < matrix[0].length; c++) {
+            int max = Integer.MIN_VALUE;
+            for (int[] row : matrix) {
+            	System.out.println(row[c] + " : : max:"max+ "===" +  " row[c] :" + row[c]);
+                max = Math.max(max, row[c]);
+            }
+            if (minRowValues.contains(max)) {
+                luckyNumbers.add(max);
+            }
+        }
+
+        return luckyNumbers;
+    }
+    
+    
+    public static void main(String[] args) {
+    	LuckyNumbers solution = new LuckyNumbers();
+        
+        // Example 1
+        int[][] matrix1 = {
+            {3, 7, 8},
+            {9, 11, 13},
+            {15, 16, 17}
+        };
+        System.out.println("Example 1: " + solution.luckyNumbers(matrix1));
+        
+        // Example 2
+        int[][] matrix2 = {
+            {1, 10, 4, 2},
+            {9, 3, 8, 7},
+            {15, 16, 17, 12}
+        };
+/*        System.out.println("Example 2: " + solution.luckyNumbers(matrix2));
+        
+        // Example 3
+        int[][] matrix3 = {
+            {7, 8},
+            {1, 2}
+        };
+        System.out.println("Example 3: " + solution.luckyNumbers(matrix3));
+        
+        // Example 4
+        int[][] matrix4 = {
+            {10, 10, 10},
+            {5, 7, 10},
+            {1, 2, 3}
+        };
+        System.out.println("Example 4: " + solution.luckyNumbers(matrix4));
+        
+        // Example 5
+        int[][] matrix5 = {
+            {3, 5, 6},
+            {2, 7, 8},
+            {1, 4, 9}
+        };
+        System.out.println("Example 5: " + solution.luckyNumbers(matrix5));*/
+    }
+
+}

@@ -1,0 +1,56 @@
+//https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+
+
+class removeDuplicates {
+    public int removeDuplicates(int[] nums) {
+        // Initialize a count variable to keep track of the number of unique elements
+        int count = 0;
+
+        // Iterate through the array
+        for(int i = 0; i < nums.length; i++) {
+            // Check if the current element is the same as the next one
+            if(i < nums.length - 1 && nums[i] == nums[i+1]) {
+                // If it's a duplicate, continue to the next iteration
+                continue;
+            } else {
+                // If it's not a duplicate, assign it to the position indicated by count
+                nums[count] = nums[i];
+                // Increment count to indicate a unique element has been added
+                count++;
+            }
+        }
+
+        // Return the number of unique elements
+        return count;
+    }
+
+    public static void main(String[] args) {
+    	removeDuplicates solution = new removeDuplicates();
+
+        // Define test cases
+        int[][] testCases = {
+            {1, 1, 2, 2, 3, 4, 4, 5, 5},
+            {1, 1, 1, 1, 1},
+            {1, 2, 3, 4, 5},
+            {},
+            {1, 2, 2, 3, 3, 3, 4, 4, 5, 5, 6}
+        };
+
+        // Test the removeDuplicates method with each test case
+        for(int i = 0; i < testCases.length; i++) {
+            int[] nums = testCases[i];
+            int uniqueCount = solution.removeDuplicates(nums);
+
+            // Print the number of unique elements
+            System.out.println("Test Case " + (i + 1) + ":");
+            System.out.println("Number of unique elements: " + uniqueCount);
+
+            // Print the array with unique elements
+            System.out.print("Array with unique elements: ");
+            for(int j = 0; j < uniqueCount; j++) {
+                System.out.print(nums[j] + " ");
+            }
+            System.out.println("\n");
+        }
+    }
+}

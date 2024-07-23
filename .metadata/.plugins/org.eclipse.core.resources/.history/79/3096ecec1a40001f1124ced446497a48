@@ -1,0 +1,110 @@
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import javax.swing.plaf.synth.SynthSeparatorUI;
+
+//https://leetcode.com/problems/3sum/submissions/895508332/
+
+// This Code is not for leetcode . Its for undertsanidng 
+public class FourSum_TUFApproch {
+
+	public static void main(String[] args) {
+		int[] nums1 = { 8, -1, 3, 2, 1, 7, 9, 15 };
+		int target1 = 17;
+		System.out.println("Nums:"+Arrays.toString(nums1) );
+		System.out.println("Target:"+ target1 );		
+		System.out.println("Output:" + Arrays.toString(fourSum(nums1, target1)));
+		System.out.println("====================================================");
+		
+		
+		int[] nums2 = { 2, 4, 6, 8, 10 };
+		int target2 = 16;
+		System.out.println("Nums:"+Arrays.toString(nums2) );
+		System.out.println("Target:"+ target2 );	
+		System.out.println("Output:" + Arrays.toString(fourSum(nums1, target1)));
+		System.out.println("====================================================");
+		
+		
+		int[] nums3 = { -5, 0, 10, 5, -3, 4 };
+		int target3 = 2;
+		System.out.println("Nums:"+Arrays.toString(nums3));
+		System.out.println("Target:"+ target3 );	
+		System.out.println("Output:" +Arrays.toString(fourSum(nums3, target3)));
+		System.out.println("====================================================");
+		
+		
+		int[] nums4 = { 1, 2, 3, 4, 5 };
+		int target4 = 9;
+		System.out.println("Nums:"+Arrays.toString(nums4) );
+		System.out.println("Target:"+ target4 );	
+		System.out.println("Output:" + Arrays.toString(fourSum(nums4, target4)));
+		System.out.println("====================================================");
+		
+		System.out.println("====================================================");
+		int[] nums5 = { -1, -2, -3, -4, -5 };
+		int target5 = -8;
+		System.out.println("Nums:"+Arrays.toString(nums5) );
+		System.out.println("Target:"+ target5 );	
+		System.out.println("Output:" + Arrays.toString(fourSum(nums5, target5)));
+		System.out.println("====================================================");
+		
+	}
+
+	//=============Approch 1 : # pointer with binary search===================
+
+    public static int[] fourSum(int[] nums, int target) 
+    {
+    	for (int i = 0; i < nums.length-3; i++)
+    	{
+    		for (int j = i+1 ; j < nums.length; j++)
+    		{
+				for (int k = j+1; k < nums.length; k++) 
+				{
+					int Pointer3Sum = nums[i] + nums[j] + nums[j] ;
+					int remainingSum = target - Pointer3Sum ;
+					
+					int Find=  binarySearch(nums, remainingSum)
+					
+					
+				}
+			}
+		}
+		
+ 
+    }
+    
+    
+    
+	 static int binarySearch(int[] arr, int target) {
+		// TODO Auto-generated method stub
+		 int n = arr.length ;
+		 int low = 0 ;
+		 int high = arr.length -1 ;
+		 
+		 
+		 while(low <= high)
+		 {
+			 int mid = low + (high - low) /2 ;
+			 
+			 if(arr[mid] == target)  // compare with array element
+			 {
+			
+				  return arr[mid] ;  // return index 
+			 }
+			 
+			 if( target > arr[mid])  // compare with array element
+			 {
+				 low = mid + 1 ; 
+			 }
+			 else
+			 {
+				 high = mid -1 ; 
+			 }
+			 
+		 }
+		 
+		 
+		return -1 ; // found 
+	}
+}
